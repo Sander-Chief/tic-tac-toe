@@ -1,0 +1,31 @@
+body {
+  background-image: radial-gradient(circle, yellow, purple);
+}
+
+#wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#board {
+  display: flex;
+  flex-flow: column;
+  background-color: white;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+}
+
+.space {
+  height: 50px;
+  width: 50px;
+  font-size: 36px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
