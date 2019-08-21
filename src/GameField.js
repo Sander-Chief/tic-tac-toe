@@ -14,6 +14,18 @@ class GameField extends React.Component {
     this.createNewField();
   }
 
+  componentDidUpdate() {
+    if (this.state.finished) {
+      let winner;
+      if (this.state.player === 1) {
+        winner = 2;
+      } else if (this.state.player === 2) {
+        winner = 1;
+      }
+      alert("Player №" + winner + " won!");
+    }
+  }
+
   // create a new two-dimensional array to store board state
   createNewField = () => {
     let n = this.props.rows;
@@ -104,7 +116,7 @@ class GameField extends React.Component {
   render() {
     const boardRows = this.props.game && this.state.board.map((row, i, arr1) => {
       const boardSpaces = row.map((column, j, arr2) => {
-        // we won't render our first and last two rows/spaces, they are only used for corner cases in checkWinner function
+        // we don't render our first and last two rows/spaces, they are only used for corner cases in checkWinner function
         if (j > 1 && j < (arr2.length -2)) {
           return (
             <div

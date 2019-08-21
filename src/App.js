@@ -11,12 +11,6 @@ class App extends React.Component {
   }
 
   startGame = () => {
-    let n = this.state.rows;
-    let newBoard = [];
-    for (let i = 0; i < n; i++) {
-      let newRow = new Array(n).fill(-1);
-      newBoard.push(newRow);
-    };
     this.setState({
       game: !this.state.game
     });
@@ -24,7 +18,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="wrapper">
+      <div className="wrapper">
         <h1>
           {this.props.title}
         </h1>
